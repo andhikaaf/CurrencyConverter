@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" type="text/css" href="styles/semantic.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/components/icon.min.css'>
+ 
+</head>
+
+<body class="ui center container">
+
+    <div class="ui center container"> 
+        <h1 class="ui center aligned gray header" 
+            style=" color: #666666; margin-top: 2em; font-size: 3em">Currency Converter</h1>
+        <div class="ui fitted blue  divider"></div> 
+    </div>
+
+    <div name="convert_section" class="ui center aligned very padded blue piled segment">
+        <div class="ui relaxed grid">
+            <div class="row">
+                <div class="six wide column">
+                    <div class="ui labeled input" >
+                        <label style="margin-top: 0.5em; margin-right: 0.5em;">Enter the Amount</label> <input type="text" id="amount_entry" placeholder="Amount"/>
+                    </div>
+                    <div class="ui divider" ></div>
+                </div>
+                <div class="four wide column"></div>
+                <div class="six wide column">
+                    <div class="ui disabled labeled input" >
+                        <label style="margin-top: 0.5em; margin-right: 0.5em;">Result</label> <input type="text" id="converted_value_entry" placeholder="Amount"/>
+                    </div>
+                    <div class="ui divider" ></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="seven wide column">
+                    <div class="ui inner celled grid" >
+                            <div class="row" >
+                                <div class="three wide column"> 
+                                    <label >From : </label>
+                                </div>
+                                <div class="thirteen wide column">
+                                    <select style="width: 190px" id="currency_from_dropdown" ></select>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="two wide column">
+                    <i id="exchange_icon" style="margin-top: 1em" class="ui center alligned large exchange icon"></i>
+                    <div id="dimmer_uno" class="ui active dimmer" style="visibility: hidden;">
+                        <div class="ui text loader">Loading</div>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                        <div class="ui celled grid">
+                            <div class="row">
+                                <div class="three wide column"> 
+                                    <label >To : </label>
+                                </div>
+                                <div class="thirteen wide column">
+                                    <select style="width: 190px" id="currency_to_dropdown" ></select>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="six wide column"></div>
+                <div class="four wide column">
+                    <button id="submit_button" class="ui blue labeled icon button" type="button">
+                            <i class="inverted large money bill icon"></i>
+                            Convert
+                    </button>
+                </div>
+                <div class="six wide column"></div>
+            </div>
+        </div>
+    </div>
+	
+	 <div class="ui center container"> 
+        <h1 class="ui center aligned gray header" 
+            style=" color: #666666; margin-top: 2em;">Notes</h1>
+        <div class="ui fitted blue  divider"></div> 
+		<ul class="list">
+            <li>Calculation: <code>value × 1.1 × currency rate</code>, rounded up to closest thousand.
+			<li>Payment method:
+                    <ul class="list">
+                        <li>Bank (preferred for IDR)</li>
+                        <li>Steam gift (for other currencies)</li>
+			<small>Hit Shinon#2458 up on discord for payment details </small>						
+                    </ul>
+            <li>Customs and delivery fees to your country are not included.
+            </li><li>Please estimate the delivery fee via <a href="http://www.post.japanpost.jp/int/charge/list/ems1_en.html">EMS site</a> (only for physical goods).                
+            </li><li>Don't forget to calculate total value after including tax and delivery fee within Japan (only for physical goods). 
+            </li><li>Exchange rates are obtained from <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html">European Central Bank</a>.            
+            </li><li>Today rate is <span id='today_rate'>??</span> JPY/IDR.
+        </li></ul>
+		
+    </div>
+
+</body>
+
+<footer>
+        <script src="js/idb.js" type="module"></script>
+        <script src="js/main/main.js" type="module"></script>
+</footer>
+</html>
