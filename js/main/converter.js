@@ -10,7 +10,7 @@ export default class Converter
 
     getAllCurrencies(callBack)
     {
-        fetch("http://api.exchangeratesapi.io/v1/latest?access_key=3d1ebf44fb89684d580639c914bf2c43&format=1")
+        fetch("https://api.exchangeratesapi.io/v1/latest?access_key=3d1ebf44fb89684d580639c914bf2c43&format=1")
         .then(response => callBack(null, response))
         .catch(error => callBack(error, null));
     }
@@ -23,7 +23,7 @@ export default class Converter
         const query = fromCurrency + ',' + toCurrency;
 
         //we build the URL
-         const url = `http://api.exchangeratesapi.io/v1/latest?access_key=3d1ebf44fb89684d580639c914bf2c43&format=1&symbols=${query}`;
+         const url = `https://api.exchangeratesapi.io/v1/latest?access_key=3d1ebf44fb89684d580639c914bf2c43&format=1&symbols=${query}`;
        
          fetch(url)
             .catch(error => callBack(error))
